@@ -1,0 +1,20 @@
+{
+  "name": "lor-gpt-phase1-auth",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev -w client\" \"npm:dev -w server\"",
+    "dev:client": "npm -w client run dev",
+    "dev:server": "npm -w server run dev",
+    "build": "npm -w client run build",
+    "lint": "npm -w client run lint && npm -w server run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
